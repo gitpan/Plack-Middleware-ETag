@@ -81,8 +81,8 @@ test_psgi
         my $req = GET "http://localhost/", 'If-None-Match' => $sha;
         my $res = $cb->($req);
         ok $res->header('ETag');
-	is $res->code, 304;
-	ok !$res->content;
+    is $res->code, 304;
+    ok !$res->content;
     }
 };
 
@@ -94,8 +94,8 @@ test_psgi
         my $req = GET "http://localhost/";
         my $res = $cb->($req);
         ok $res->header('ETag');
-	is $res->code, 200;
-	ok $res->content;
+    is $res->code, 200;
+    ok $res->content;
     }
 };
 
